@@ -25,7 +25,8 @@ mongoose
 
 /* Requête get => return index.html */
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
+  /* Envoi l'application Angular en réponse */
+  res.sendFile(path.join(__dirname, "../client/src/app/app.component.html"));
 });
 
 module.exports = app;
