@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
+const routes = require("./routes");
 
 /* Middleware nécessaire à mon app Express */
 app.use(logger("dev"));
@@ -22,6 +23,9 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+
+/* Permet de répondre à toutes les requêtes sur notre API. */
+app.use(routes);
 
 /* Requête get => return index.html */
 app.get("*", (req, res) => {

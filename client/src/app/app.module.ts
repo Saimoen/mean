@@ -9,6 +9,9 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { ProfileComponent } from './shared/components/profile/profile.component';
 import { ConnexionComponent } from './auth/connexion/connexion.component';
 import { InscriptionComponent } from './auth/inscription/inscription.component';
+import { LayoutModule } from './shared/modules/layout.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,14 @@ import { InscriptionComponent } from './auth/inscription/inscription.component';
     ConnexionComponent,
     InscriptionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
