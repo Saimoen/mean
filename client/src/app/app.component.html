@@ -1,6 +1,4 @@
-<div class="container">
-  <app-header (logout)="logout()" [user]="user$ | async"></app-header>
-  <div class="p-20">
-    <router-outlet></router-outlet>
-  </div>
+<app-header (logout)="logout()" [user]="user$ | async"></app-header>
+<div>
+  <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <a routerLink="/">Mon Logo</a>
   <ul *ngIf="!user">
     <li class="m-10">
@@ -16,4 +16,49 @@
       Déconnexion
     </li>
   </ul>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar w/ text</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Présentations</a>
+        </li>
+      </ul>
+      <ul *ngIf="!user" class="navbar-nav">
+        <li class="m-10">
+          <a routerLink="connexion" class="nav-link">Connexion</a>
+        </li>
+        <li class="m-10">
+          <a routerLink="inscription" class="nav-link">Inscription</a>
+        </li>
+      </ul>
+      <ul *ngIf="user" class="navbar-nav">
+        <li class="m-10">
+          <a routerLink="profil" class="nav-link">Profil</a>
+        </li>
+        <li style="cursor: pointer" class="m-10">
+          <a href="/" class="nav-link" (click)="logout.emit(true)"
+            >Déconnexion</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
