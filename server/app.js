@@ -16,7 +16,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "/public")));
 /* Permet la connexion à la base de donnée */
 mongoose
-  .connect("mongodb+srv://GreksO:Gregsaimoen12@meanapp.u4r8eht.mongodb.net/")
+  .connect(
+    "mongodb+srv://GreksO:Gregsaimoen12@meanapp.u4r8eht.mongodb.net/meanApp",
+    {
+      useNewUrlParser: true,
+    }
+  )
   .then(() => {
     console.log("Connexion opened to mongodb!");
   })

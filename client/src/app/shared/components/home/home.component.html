@@ -308,3 +308,15 @@
     </p>
   </footer>
 </main>
+
+<form [formGroup]="form" (submit)="submit()">
+  <label for="">Titre</label>
+  <input type="text" formControlName="titre" />
+  <label for="">Image</label>
+  <input type="text" formControlName="image" />
+  <label for="">Contenu</label>
+  <input type="text" formControlName="content" />
+  <label for="">Category</label>
+  <input type="text" formControlName="category" />
+  <button>Publier</button>
+</form>
