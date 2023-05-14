@@ -15,6 +15,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  getUser() {
+    return this.user$.asObservable();
+  }
+
+  setUser(user: User) {
+    this.user$.next(user);
+  }
+
   public fetchCurrentUser(): Observable<User> {
     return this.http.get<User>('/api/auth/currentuser').pipe(
       tap((user: User) => {

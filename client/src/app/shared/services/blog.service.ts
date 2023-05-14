@@ -12,4 +12,8 @@ export class BlogService {
   public inscription(blog: Blog): Observable<any> {
     return this.http.post('/api/blog', blog);
   }
+
+  public getBlog(): Observable<any> {
+    return this.http.get('/api/blog/get');
+  }
 }
