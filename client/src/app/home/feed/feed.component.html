@@ -1,0 +1,23 @@
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider" />
+<ng-container *ngFor="let blog of blogs">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">
+        {{ blog.titre }}
+        <span class="text-body-secondary">{{ blog.category }}</span>
+      </h2>
+      <p class="lead">
+        {{ blog.content }}
+      </p>
+    </div>
+    <div class="col-md-5">
+      <img [src]="blog.image" width="500" height="500" alt="" />
+    </div>
+  </div>
+
+  <hr class="featurette-divider" />
+</ng-container>
+
+<!-- /END THE FEATURETTES -->

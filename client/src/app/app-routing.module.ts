@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConnexionComponent } from './auth/connexion/connexion.component';
 import { InscriptionComponent } from './auth/inscription/inscription.component';
-import { HomeComponent } from './shared/components/home/home.component';
+import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './shared/components/profile/profile.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { DataUserGuard } from './shared/guards/data-user.guard';
