@@ -1,23 +1,42 @@
-<!-- START THE FEATURETTES -->
-
-<hr class="featurette-divider" />
-<ng-container *ngFor="let blog of blogs">
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading fw-normal lh-1">
-        {{ blog.titre }}
-        <span class="text-body-secondary">{{ blog.category }}</span>
-      </h2>
-      <p class="lead">
-        {{ blog.content }}
-      </p>
-    </div>
-    <div class="col-md-5">
-      <img [src]="blog.image" width="500" height="500" alt="" />
+<div class="row">
+  <div class="col-lg-6">
+    <!-- Blog post 1 -->
+    <div class="card mb-4" *ngFor="let blog of leftColumnBlogs">
+      <a href="#!">
+        <img class="card-img-top img-fluid" [src]="blog.image" alt="..." />
+      </a>
+      <div class="card-body">
+        <div class="small text-muted">January 1, 2023</div>
+        <h2 class="card-title h4">{{ blog.titre }}</h2>
+        <p class="card-text text-break">{{ blog.content }}</p>
+        <a class="btn btn-primary" href="#!">Read more →</a>
+      </div>
     </div>
   </div>
+  <div class="col-lg-6">
+    <!-- Blog post 2 -->
+    <div class="card mb-4" *ngFor="let blog of rightColumnBlogs">
+      <a href="#!">
+        <img class="card-img-top img-fluid" [src]="blog.image" alt="..." />
+      </a>
+      <div class="card-body">
+        <div class="small text-muted">January 1, 2023</div>
+        <h2 class="card-title h4">{{ blog.titre }}</h2>
+        <p class="card-text text-break">{{ blog.content }}</p>
+        <a class="btn btn-primary" href="#!">Read more →</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <hr class="featurette-divider" />
-</ng-container>
-
-<!-- /END THE FEATURETTES -->
+<nav aria-label="Pagination">
+  <hr class="my-0" />
+  <ul class="pagination justify-content-center my-4">
+    <pagination
+      [(ngModel)]="currentPage"
+      [itemsPerPage]="pageSize"
+      [totalItems]="totalItems"
+      (pageChanged)="onPageChange($event)"
+    ></pagination>
+  </ul>
+</nav>

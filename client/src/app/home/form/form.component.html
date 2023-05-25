@@ -1,4 +1,4 @@
-<div class="container" *ngIf="user">
+<!-- <div class="container" *ngIf="user">
   <div class="card">
     <div class="card-header">Écrivez votre post</div>
     <div class="card-body">
@@ -30,26 +30,132 @@
           <label for="exampleInputPassword1" class="form-label"
             >Contenu du post :</label
           >
-          <input
-            type="text"
+
+          <textarea
             class="form-control"
-            id="exampleInputPassword1"
             formControlName="content"
-          />
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label"
             >Catégorie</label
           >
-          <input
-            type="text"
+
+          <select
             class="form-control"
-            id="exampleInputPassword1"
+            id="select-category"
             formControlName="category"
-          />
+          >
+            <option value="Terre">Terre</option>
+            <option value="Mer">Mer</option>
+            <option value="Urbain">Urbain</option>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+  </div>
+</div>
+ -->
+
+<!-- Search widget-->
+<div class="card mb-4">
+  <div class="card-header">Search</div>
+  <div class="card-body">
+    <div class="input-group">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter search term..."
+        aria-label="Enter search term..."
+        aria-describedby="button-search"
+      />
+      <button class="btn btn-primary" id="button-search" type="button">
+        Go!
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Categories widget-->
+<div class="card mb-4">
+  <div class="card-header">Categories</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-unstyled mb-0">
+          <li><a href="#!">Web Design</a></li>
+          <li><a href="#!">HTML</a></li>
+          <li><a href="#!">Freebies</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="list-unstyled mb-0">
+          <li><a href="#!">JavaScript</a></li>
+          <li><a href="#!">CSS</a></li>
+          <li><a href="#!">Tutorials</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Side widget-->
+<div class="card mb-4" *ngIf="user">
+  <div class="card-header">Quoi de neuf ?</div>
+  <div class="card-body">
+    <form [formGroup]="form" (submit)="submit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"
+          >Titre du post :</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          formControlName="titre"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Url de l'image :</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          formControlName="image"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Contenu du post :</label
+        >
+
+        <textarea
+          class="form-control"
+          formControlName="content"
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Catégorie</label>
+
+        <select
+          class="form-control"
+          id="select-category"
+          formControlName="category"
+        >
+          <option value="Terre">Terre</option>
+          <option value="Mer">Mer</option>
+          <option value="Urbain">Urbain</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
 </div>

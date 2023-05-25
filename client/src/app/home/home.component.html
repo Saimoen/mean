@@ -1,12 +1,32 @@
 <main>
-  <app-carousel></app-carousel>
-  <div class="container marketing">
-    <app-marketing></app-marketing>
-    <app-form [user]="user"></app-form>
-
-    <app-feed [blogs]="blogs"></app-feed>
+  <!-- Page header with logo and tagline-->
+  <header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+      <div class="text-center my-5">
+        <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+        <p class="lead mb-0">
+          A Bootstrap 5 starter layout for your next blog homepage
+        </p>
+      </div>
+    </div>
+  </header>
+  <!-- Page content-->
+  <div class="container">
+    <div class="row">
+      <!-- Blog entries-->
+      <div class="col-lg-8">
+        <!-- Featured blog post-->
+        <app-marketing></app-marketing>
+        <!-- Nested row for non-featured blog posts-->
+        <app-feed [blogs]="blogs"></app-feed>
+        <!-- Pagination-->
+        <!--   <app-carousel></app-carousel> -->
+      </div>
+      <!-- Side widgets-->
+      <div class="col-lg-4">
+        <app-form [user]="user"></app-form>
+      </div>
+    </div>
   </div>
-  <!-- /.container -->
-
   <app-footer></app-footer>
 </main>

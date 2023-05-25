@@ -4,7 +4,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { MarketingComponent } from './marketing/marketing.component';
 import { FeedComponent } from './feed/feed.component';
 import { FormComponent } from './form/form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     FeedComponent,
     FormComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PaginationModule,
+    PaginationModule.forRoot(),
+  ],
   exports: [
     CarouselComponent,
     MarketingComponent,
