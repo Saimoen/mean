@@ -16,4 +16,9 @@ export class BlogService {
   public getBlog(): Observable<any> {
     return this.http.get('/api/blog/get');
   }
+
+  public deleteBlog(id: string): Observable<any> {
+    const url = `/api/blog/${id}`;
+    return this.http.delete(url);
+  }
 }

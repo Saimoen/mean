@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Blog } from 'src/app/shared/interfaces/blog.interface';
+import { BlogService } from 'src/app/shared/services/blog.service';
 
 @Component({
   selector: 'app-feed',
@@ -26,6 +27,8 @@ export class FeedComponent implements OnInit {
   get blogs(): Blog[] {
     return this._blogs;
   }
+
+  constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {}
 
@@ -54,5 +57,22 @@ export class FeedComponent implements OnInit {
   onPageChange(event: any) {
     this.currentPage = event.page;
     this.paginateBlogs();
+  }
+
+  // Dans un composant Angular
+  onDeleteBlog(blogId: string | undefined): void {
+    console.log(blogId);
+    if (blogId) {
+      this.blogService.deleteBlog(blogId).subscribe(
+        () => {
+          console.log('Blog deleted successfully');
+          // Effectuez les actions supplémentaires nécessaires après la suppression du blog
+        },
+        (error) => {
+          console.error('Failed to delete blog', error);
+          // Traitez l'erreur en conséquence
+        }
+      );
+    }
   }
 }

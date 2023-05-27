@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/interfaces/user.interface';
@@ -9,14 +9,14 @@ import { BlogService } from 'src/app/shared/services/blog.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
   @Input() public user!: User | null;
   public error!: string;
   public form: FormGroup = this.fb.group({
     titre: ['', Validators.required],
     image: ['', Validators.required],
-    content: ['', Validators.required],
-    category: ['', Validators.required],
+    content: ['', Validators.required, Validators.maxLength(120)],
+    category: ['Sélectionner la catégorie', Validators.required],
   });
 
   constructor(
@@ -24,6 +24,8 @@ export class FormComponent {
     private blogService: BlogService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {}
 
   public submit() {
     if (this.form.valid) {

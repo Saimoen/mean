@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeModule } from './home/home.module';
     ProfileComponent,
     ConnexionComponent,
     InscriptionComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
