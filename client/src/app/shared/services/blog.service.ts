@@ -17,6 +17,10 @@ export class BlogService {
     return this.http.get('/api/blog/get');
   }
 
+  public getBlogById(id: string | null): Observable<any> {
+    return this.http.get(`api/blog/get/${id}`);
+  }
+
   public deleteBlog(id: string): Observable<any> {
     const url = `/api/blog/${id}`;
     return this.http.delete(url);

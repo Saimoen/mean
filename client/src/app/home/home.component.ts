@@ -14,6 +14,7 @@ import { AuthService } from '../shared/services/auth.service';
 export class HomeComponent implements OnInit {
   @Input() public user!: User | null;
   @Input() public blogs!: Blog[];
+  @Input() public idBlog!: string;
 
   constructor(
     private blogService: BlogService,

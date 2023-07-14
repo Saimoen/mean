@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { PostComponent } from './post/post.component';
+import { ArticleComponent } from './post/article/article.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PostComponent } from './post/post.component';
     ConnexionComponent,
     InscriptionComponent,
     PostComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,

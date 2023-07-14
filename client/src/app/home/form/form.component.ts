@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
   public form: FormGroup = this.fb.group({
     titre: ['', Validators.required],
     image: ['', Validators.required],
-    content: ['', Validators.required, Validators.maxLength(120)],
+    content: ['', Validators.required],
     category: ['Sélectionner la catégorie', Validators.required],
   });
 

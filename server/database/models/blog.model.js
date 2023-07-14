@@ -9,6 +9,7 @@ const blogSchema = Schema({
   image: String,
   content: String,
   category: String,
+  created_at: { type: Date, default: Date.now },
 });
 
 /* Nous créons et exportons ensuite notre modelUser.

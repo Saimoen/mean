@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "/public")));
+
+/* Permet de répondre à toutes les requêtes sur notre API. */
+app.use(routes);
+
 /* Permet la connexion à la base de donnée */
 mongoose
   .connect(
@@ -28,9 +32,6 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-/* Permet de répondre à toutes les requêtes sur notre API. */
-app.use(routes);
 
 /* Requête get => return index.html */
 app.get("*", (req, res) => {
