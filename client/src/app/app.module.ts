@@ -16,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { PostComponent } from './post/post.component';
 import { ArticleComponent } from './post/article/article.component';
+import { CommentComponent } from './post/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ArticleComponent } from './post/article/article.component';
     InscriptionComponent,
     PostComponent,
     ArticleComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

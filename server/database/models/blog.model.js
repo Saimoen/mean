@@ -14,9 +14,9 @@ const blogSchema = Schema({
 
 /* Nous créons et exportons ensuite notre modelUser.
 Vous remarquez que nous avons un Schema et un model. */
-const User = mongoose.model("blog", blogSchema);
+const Blog = mongoose.model("blog", blogSchema);
 
-module.exports = User;
+module.exports = Blog;
 
 /* Un Schema est un objet qui définit la structure des documents qui vont être enregistrés dans votre collection mongoDB. Il permet de définir des types et des validateurs pour tous les objets sauvegardés.
 

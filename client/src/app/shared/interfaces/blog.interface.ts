@@ -4,4 +4,5 @@ export interface Blog {
   image: string;
   content: string;
   category: string;
+  created_at: Date;
 }
