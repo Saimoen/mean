@@ -12,6 +12,8 @@ const blogSchema = Schema({
   created_at: { type: Date, default: Date.now },
 });
 
+blogSchema.index({ content: "text", title: "text" }); // Ajoutez cet index pour prendre en charge les requêtes de recherche
+
 /* Nous créons et exportons ensuite notre modelUser.
 Vous remarquez que nous avons un Schema et un model. */
 const Blog = mongoose.model("blog", blogSchema);

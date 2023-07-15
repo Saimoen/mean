@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Blog } from '../interfaces/blog.interface';
@@ -19,6 +19,12 @@ export class BlogService {
 
   public getBlogById(id: string | null): Observable<any> {
     return this.http.get(`api/blog/get/${id}`);
+  }
+
+  searchBlogs(searchTerm: string): Observable<any> {
+    let params = new HttpParams().set('search', searchTerm); // Créez un nouvel objet HttpParams avec le paramètre de recherche
+
+    return this.http.get(`api/blog/search`, { params });
   }
 
   public deleteBlog(id: string): Observable<any> {

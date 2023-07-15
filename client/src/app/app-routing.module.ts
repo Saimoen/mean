@@ -7,6 +7,7 @@ import { ProfileComponent } from './shared/components/profile/profile.component'
 import { AuthGuard } from './shared/guards/auth.guard';
 import { DataUserGuard } from './shared/guards/data-user.guard';
 import { PostComponent } from './post/post.component';
+import { SearchComponent } from './home/search/search.component';
 
 const routes: Routes = [
   { path: '', canActivate: [DataUserGuard], component: HomeComponent },
@@ -29,6 +30,14 @@ const routes: Routes = [
     path: 'post/:id',
     canActivate: [DataUserGuard],
     component: PostComponent,
+  },
+  {
+    path: 'search/:searchTerm',
+    canActivate: [DataUserGuard],
+    component: SearchComponent,
+    data: {
+      searchParam: 'searchTerm',
+    },
   },
 ];
 

@@ -29,6 +29,19 @@ router.get("/get/:id", async (req, res) => {
   }
 });
 
+router.get("/search", async (req, res) => {
+  try {
+    const searchTerm = req.query.search; // Récupérez le terme de recherche à partir des paramètres de requête
+
+    // Utilisez le terme de recherche pour effectuer la recherche dans votre base de données
+    const blogs = await Blog.find({ $text: { $search: searchTerm } });
+
+    res.json(blogs);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const newBlog = new Blog({

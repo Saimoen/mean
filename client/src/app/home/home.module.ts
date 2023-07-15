@@ -6,6 +6,7 @@ import { FeedComponent } from './feed/feed.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     MarketingComponent,
     FeedComponent,
     FormComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
