@@ -1,29 +1,27 @@
 <div class="text-center inscription">
-  <main class="form-signin w-100 m-auto" style="min-height: 79vh">
+  <main class="form-signin w-100 m-auto" style="min-height: 78vh">
     <form [formGroup]="form" (submit)="submit()">
-      <img class="mb-4 w-50" src="../../../assets/images/logo.png" alt="" />
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-      <div class="form-floating">
+      <img class="img-fluid" src="../../../assets/images/connexion.png" alt="" />
+      <div class="form-floating mb-3">
         <input
           type="email"
           class="form-control"
           id="floatingInput"
-          placeholder="name@example.com"
+          placeholder="Veuillez renseigner votre adresse e-mail"
           formControlName="email"
         />
-        <label for="floatingInput">Email address</label>
+        <label for="floatingInput">E-mail</label>
       </div>
 
-      <div class="form-floating">
+      <div class="form-floating mb-3">
         <input
-          type="email"
+          type="text"
           class="form-control"
           id="floatingInput"
-          placeholder="name@example.com"
+          placeholder="Veuillez renseigner votre pseudo"
           formControlName="name"
         />
-        <label for="floatingInput">Prénom</label>
+        <label for="floatingInput">Pseudo</label>
       </div>
 
       <div class="form-floating">
@@ -31,21 +29,16 @@
           type="password"
           class="form-control"
           id="floatingPassword"
-          placeholder="Password"
+          placeholder="Veuillez entrer votre mot de passe"
           formControlName="password"
         />
-        <label for="floatingPassword">Password</label>
+        <label for="floatingPassword">Mot de passe</label>
       </div>
 
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me" /> Remember me
-        </label>
-      </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">
-        Sign in
+        S'inscrire
       </button>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+      <p class="mt-5 mb-3 text-body-secondary">&copy; DWWM 2023 - Made with ❤️</p>
     </form>
   </main>
 </div>

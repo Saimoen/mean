@@ -28,6 +28,11 @@ export class FeedComponent implements OnInit {
     return this._blogs;
   }
 
+  customLabels = {
+    previousLabel: 'Précédent', // Texte personnalisé pour "previous"
+    nextLabel: 'Suivant',       // Texte personnalisé pour "next"
+  };
+
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {}
