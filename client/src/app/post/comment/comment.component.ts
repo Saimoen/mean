@@ -20,7 +20,7 @@ export class CommentComponent implements OnInit {
 
   ngOnInit() {
     this.commentContent = this.form.group({
-      comment: String,
+      comment: '',
     });
   }
 

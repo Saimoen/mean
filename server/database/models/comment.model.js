@@ -8,6 +8,7 @@ const commentSchema = Schema({
   content: String,
   created_at: { type: Date, default: Date.now },
   postId: { type: Schema.Types.ObjectId, ref: "blog" },
+  userId: { type: Schema.Types.ObjectId, ref: "user" },
 });
 
 /* Nous créons et exportons ensuite notre modelUser.
